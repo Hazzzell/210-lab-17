@@ -73,31 +73,12 @@ int main() {
     cout << "Choice --> ";
     cin >> entry;
     insertNode(head, entry, 10000);
-
-    current = head;
-    prev = head;
-    for (int i = 0; i < (entry); i++)
-        if (i == 0)
-            current = current->next;
-        else {
-            current = current->next;
-            prev = prev->next;
-        }
-    //at this point, insert a node between prev and current
-    Node * newnode = new Node;
-    newnode->value = 10000;
-    newnode->next = current;
-    prev->next = newnode;
+    cout << "List after insertion:\n";
     output(head);
 
     // deleting the linked list
-    current = head;
-    while (current) {
-        head = current->next;
-        delete current;
-        current = head;
-    }
-    head = nullptr;
+    deleteNode(head);
+    cout << "List after delete the entire linked list:\n";
     output(head);
 
     return 0;
@@ -150,7 +131,6 @@ void deletelist(Node *&head, float value){
     }
     head = nullptr;
 }
-
 
 void output(Node * head) {
     if (!head) {
