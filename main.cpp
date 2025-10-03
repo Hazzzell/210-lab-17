@@ -21,13 +21,25 @@ void addToFront(Node *&head, float value);
 // returns: NA
 void addToTail(Node *&head, float value);
 
-// deleteNode() delete the nth node 
+// deleteNode() delete the nth node (1-based index) from list
 // arguments: head pointer, float value
 // returns: NA
 void deleteNode(Node *&head, float value);
 
+// insertNode() inserts a new node with given value after nth list
+// arguments: head pointer, float value
+// returns: NA
+void insertNode(Node *&head, float value);
 
-void output(Node *);
+// deleteNode() delete all node in the linked list
+// arguments: head pointer, float value
+// returns: NA
+void deletelist(Node *&head, float value);
+
+// output() output the linked list
+// arguments: pointer to head
+// returns: NA
+void output(Node *head);
 
 int main() {
     Node *head = nullptr;
@@ -118,13 +130,34 @@ int main() {
     return 0;
 }
 
-void output(Node * hd) {
-    if (!hd) {
+void addToFront(Node *&head, float value){
+    Node *newNode = new Node{value, head};
+}
+
+void addToTail(Node *&head, float value){
+
+}
+
+void deleteNode(Node *&head, float value){
+
+}
+
+void insertNode(Node *&head, float value){
+
+}
+
+void deletelist(Node *&head, float value){
+
+}
+
+
+void output(Node * head) {
+    if (!head) {
         cout << "Empty list.\n";
         return;
     }
     int count = 1;
-    Node * current = hd;
+    Node * current = head;
     while (current) {
         cout << "[" << count++ << "] " << current->value << endl;
         current = current->next;
