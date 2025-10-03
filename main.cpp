@@ -141,9 +141,21 @@ void addToTail(Node *&head, float value){
         head = newNode;
         return;
     }
+    Node *current = head;
+    while (current->next){
+        current = current->next;
+    }
+    current->next = newNode;
 }
 
-void deleteNode(Node *&head, float value){
+void deleteNode(Node *&head, float position){
+    if (!head || position < 1) return;
+    Node *current = head;
+    if (position == 1) {
+        head = head->next;
+        delete current; 
+        return;
+    }
 
 }
 
