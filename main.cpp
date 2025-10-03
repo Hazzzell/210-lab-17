@@ -1,6 +1,7 @@
 // COMSC-210 | Lab 17 | Keng C Chan
 // IDE used: Visual Studio Code (VS Code)
 #include <iostream>
+#include <cstdlib> //rand()
 using namespace std;
 
 const int SIZE = 7;  
@@ -65,34 +66,13 @@ int main() {
     cout << "List after Delete:\n";
     output(head);
 
-    // traverse that many times and delete that node
-    current = head;
-    Node *prev = head;
-    for (int i = 0; i < (entry-1); i++)
-        if (i == 0)
-            current = current->next;
-        else {
-            current = current->next;
-            prev = prev->next;
-        }
-    // at this point, delete current and reroute pointers
-    if (current) {  // checks for current to be valid before deleting the node
-        prev->next = current->next;
-        delete current;
-        current = nullptr;
-    }
-    output(head);
-
     // insert a node
     current = head;
     cout << "After which node to insert 10000? " << endl;
-    count = 1;
-    while (current) {
-        cout << "[" << count++ << "] " << current->value << endl;
-        current = current->next;
-    }
+    output(head);
     cout << "Choice --> ";
     cin >> entry;
+    insertNode(head, entry, 10000);
 
     current = head;
     prev = head;
@@ -159,17 +139,6 @@ void deleteNode(Node *&head, float position){
         prev->next = current->next;
         delete current;
     }
-}
-
-void insertNode(Node *&head, int position, float value){
-    if (position < 1) return;
-    Node *current = head;
-    for (int i = 1; current && i < position; i++) {
-        current = current->next;
-    }
-    if (!current) return;
-    Node *newNode = new Node{value, current->next};
-    current->next = newNode;
 }
 
 void deletelist(Node *&head, float value){
