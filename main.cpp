@@ -132,10 +132,15 @@ int main() {
 
 void addToFront(Node *&head, float value){
     Node *newNode = new Node{value, head};
+    head = newNode;
 }
 
 void addToTail(Node *&head, float value){
-
+    Node *newNode = new Node{value, nullptr};
+    if (!head){
+        head = newNode;
+        return;
+    }
 }
 
 void deleteNode(Node *&head, float value){
