@@ -1,5 +1,6 @@
+// COMSC-210 | Lab 17 | Keng C Chan
+// IDE used: Visual Studio Code (VS Code)
 #include <iostream>
-
 using namespace std;
 
 const int SIZE = 7;  
@@ -8,6 +9,23 @@ struct Node {
     float value;
     Node *next;
 };
+
+// function prototypes
+// addToFront() adds a new mode with the given value to Head of list
+// arguments: head pointer, float value
+// returns: NA
+void addToFront(Node *&head, float value);
+
+// addToTail() adds a new mode with the given value to Tail of list
+// arguments: head pointer, float value
+// returns: NA
+void addToTail(Node *&head, float value);
+
+// deleteNode() delete the nth node 
+// arguments: head pointer, float value
+// returns: NA
+void deleteNode(Node *&head, float value);
+
 
 void output(Node *);
 
