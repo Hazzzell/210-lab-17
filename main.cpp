@@ -50,7 +50,9 @@ int main() {
     for (int i = 0; i < SIZE; i++) {
         int tmp_val = rand() % 100;
         Node *newVal = new Node;
-        addToFront(head, tmp_val);
+        addToFront(head, tmp_val); //(Puts New node at the Head)
+        //addToTail(head, tmp_val); (Puts New node at the End)
+
     }
     cout << "Initial list:\n";
     output(head);
@@ -102,7 +104,7 @@ void addToTail(Node *&head, float value){
     current->next = newNode;
 }
 
-void deleteNode(Node *&head, float position){
+void deleteNode(Node *&head, int position){
     if (!head || position < 1) return;
     Node *current = head;
     if (position == 1) {
@@ -123,7 +125,7 @@ void deleteNode(Node *&head, float position){
 }
 
 void insertNode(Node *&head, int position, float value){
-    if (position) return;
+    if (position < 1) return;
     Node *current = head;
     for (int i = 1; current && i < position; i++){
         current = current->next;
