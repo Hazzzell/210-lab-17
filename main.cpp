@@ -49,19 +49,9 @@ int main() {
     for (int i = 0; i < SIZE; i++) {
         int tmp_val = rand() % 100;
         Node *newVal = new Node;
-        
-        // adds node at head
-        if (!head) { // if this is the first node, it's the new head
-            head = newVal;
-            newVal->next = nullptr;
-            newVal->value = tmp_val;
-        }
-        else { // its a second or subsequent node; place at the head
-            newVal->next = head;
-            newVal->value = tmp_val;
-            head = newVal;
-        }
+        addToFront(head, tmp_val);
     }
+    cout << "Initial list:\n";
     output(head);
 
     // deleting a node
@@ -71,6 +61,9 @@ int main() {
     int entry;
     cout << "Choice --> ";
     cin >> entry;
+    deleteNode(head, entry);
+    cout << "List after Delete:\n";
+    output(head);
 
     // traverse that many times and delete that node
     current = head;
