@@ -12,12 +12,12 @@ struct Node {
 };
 
 // function prototypes
-// addToFront() adds a new mode with the given value to Head of list
+// addToFront() adds a new node with the given value to Head of list
 // arguments: head pointer, float value
 // returns: NA
 void addToFront(Node *&head, float value);
 
-// addToTail() adds a new mode with the given value to Tail of list
+// addToTail() adds a new node with the given value to Tail of list
 // arguments: head pointer, float value
 // returns: NA
 void addToTail(Node *&head, float value);
